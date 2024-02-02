@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import RouteFile from './Components/RouteFile'
+import Navbar from './Components/Navbar'
+import store from "./Components/store"
+import { Provider } from 'react-redux'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Provider store={store}>
+    <Navbar/>
+    <RouteFile/>
+    </Provider>
+    </>
+  )
 }
 
-export default App;
+export default App
